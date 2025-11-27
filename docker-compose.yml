@@ -1,0 +1,12 @@
+services:
+  dockerproxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "13000:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5' # 限制使用 0.5 个 CPU 核心
+          memory: 200M # 限制使用 200M 内存
