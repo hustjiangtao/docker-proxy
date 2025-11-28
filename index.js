@@ -186,9 +186,9 @@ function responseUnauthorized(url) {
 
 // 启动 Bun 服务器
 Bun.serve({
-  port: process.env.PORT || 13001, // 从环境变量获取端口，默认 3000
+  port: process.env.PORT || 3000, // 从环境变量获取端口，默认 3000
   hostname: "0.0.0.0", // 监听所有网络接口
   fetch: handleRequest,
 });
 
-console.log(`Bun.js Docker Proxy is running on http://0.0.0.0:${process.env.PORT || 13001}`);
+console.log(`Bun.js Docker Proxy is running on http://0.0.0.0:${process.env.PORT || 3000}`);

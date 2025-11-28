@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "13000:8080"
+      - "13000:3000"
     deploy:
       resources:
         limits:

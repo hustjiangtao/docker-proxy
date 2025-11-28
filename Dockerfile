@@ -1,11 +1,5 @@
-# Start by building the application.
-FROM oven/bun:alpine as build
-
+FROM oven/bun:alpine
 WORKDIR /app
-COPY ./index.js .
-RUN bun build --compile --target=bun-linux-x64 --minify --sourcemap --bytecode ./index.js --outfile dockerproxy
-
-# Now copy it into our base image.
-FROM gcr.io/distroless/static-debian12
-COPY --from=build /app/dockerproxy /
-CMD ["./dockerproxy"]
+COPY index.js .
+EXPOSE 3000
+CMD ["bun", "index.js"]
