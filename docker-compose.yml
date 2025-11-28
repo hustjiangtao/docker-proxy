@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: dockerproxy
+    restart: unless-stopped
     ports:
       - "13000:3000"
     deploy:
