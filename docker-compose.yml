@@ -12,3 +12,10 @@ services:
         limits:
           cpus: '0.5' # 限制使用 0.5 个 CPU 核心
           memory: 200M # 限制使用 200M 内存
+    networks:
+      - app_net
+
+networks:
+  app_net:
+    name: app
+    external: true
